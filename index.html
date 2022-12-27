@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Adventure Bound | Auto Electrical</title>
+
+	<script src="https://kit.fontawesome.com/87224a5bfc.js" crossorigin="anonymous"></script>
+
+	<style>
+		:root {
+			/* Dark Mode */
+			--colBG1: #28302d;
+			--colBG2: #181d19;
+			--colBG3: #28302dCC;
+			--colFG: #faf1b1;
+			--colPrimary: #A8C254;
+			--colSecondary: #f99b1c;
+
+			/* Light Mode */
+/*			--colBG1: #28302d;
+			--colBG2: #faf1b1;
+			--colBG3: #28302dCC;
+			--colFG: #181d19;
+			--colPrimary: #A8C254;
+			--colSecondary: #f99b1c;*/
+		}
+
+		* {
+			box-sizing: border-box;
+			color: var(--colFG);
+		}
+		body {
+			background-color: var(--colFG);
+			margin: 0.5em;
+			display: flex;
+			flex-flow: row;
+			position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+			font-family: Patua One, sans-serif;
+		}
+
+		body > * {
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			align-items: center;
+			flex-basis: 50%;
+			padding: 1em;
+			position: relative;
+			overflow: hidden;
+		}
+		header {
+			background-color: var(--colBG1);
+			background-image: url('../img/Newnes-Campground.jpg');
+			background-size: cover;
+			background-attachment: fixed;
+			background-blend-mode: multiply;
+		}
+
+		ul {
+			line-height: 2em;
+		}
+
+		main {
+			background-color: var(--colBG2);
+			padding-top: 2em;
+			padding-bottom: 0;
+		}
+
+		main > * {
+			width: 100%;
+		}
+
+		nav {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			padding: .5em;
+			display: flex;
+			height: 2em;
+			justify-content: space-around;
+			background-color: var(--colBG3);
+		}
+
+		#logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			aspect-ratio: 1 / 1;
+/*			border: 1px solid var(--colSecondary);*/
+			text-align: center;
+			border-radius: 50%;
+
+		}
+
+		#logo span {
+			font-size: 2em;
+			color: var(--colBG2);
+		}
+
+		#logo img {
+			width: 50%;
+			height: 50%;
+		}
+		a {
+			color: var(--colPrimary);
+		}
+
+		hr {
+			border: 0;
+			border-top: 2px solid var(--colSecondary);
+		}
+
+		h1, h2, h3 {
+			color: var(--colPrimary);
+		}
+
+		h2, h3 {
+			color
+		}
+		.num {
+			font-family: Bebas Neue;
+			font-size: 1.25em;
+			vertical-align: middle;
+		}
+
+		.fade {
+			opacity: 0.5;
+		}
+
+		.contact {
+			line-height: 2.5em;
+		}
+
+		footer {
+			line-height: 2em;
+		}
+
+		@media (max-width:600px) {
+			body {
+				flex-flow: column;
+				margin: 0;
+			}
+			body > * {
+				padding: 1.5em;
+			}
+
+			#logo img {
+				width: 66%;
+				height:;
+				aspect-ratio: 1 / 1;
+			}
+			header {
+				flex: 0 0 25%;
+			}
+			main {
+				flex: 1 0 75%;
+				justify-content: flex-start;
+				align-items: flex-start;
+				padding-top: 0;
+				padding-bottom: 2em;
+			}
+			nav {
+				top: auto;
+				bottom: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<div id=logo>
+			<!-- <span>ADVENTURE BOUND</span> -->
+			<img src="img/logo.png">
+		</div>
+	</header>
+	<main>
+<!-- 		<nav>
+			<span>Link 1</span>
+			<span>Link 2</span>
+			<span>Link 3</span>
+		</nav> -->
+		<h2>Be ready for your next adventure.</h2>
+		<p>New business offering a range of automotive electrical services. Our services include:</p>
+		<ul>
+			<li>Dual Battery Systems</li>
+			<li>Off-Grid Setups</li>
+			<li>Accessory installation</li>
+			<li>Auxiliary light installation</li>
+			<li>Electrical system repairs/upgrades</li>
+		</ul>
+		<p>Send a message to inquire about any services you need from us.</p>
+		<hr>
+		<p class='contact'><i class="fa-solid fa-phone"></i> Michael <span class='fade'>|</span> <a href="tel:0401421723" class='num'>0405 625 925</a><br>
+		<i class="fa-solid fa-envelope"></i> <a href="mailto:heygleeson@gmail.com">michael@adventureboundautoaelectrical.au</a></p>
+		<hr>
+		<footer>
+			Adventure Bound Auto Electrical<br>
+			<i class="fa-solid fa-location-dot"></i> Hawkesbury NSW<br>
+			<b>ABN</b> <span class='num'>57 679 695 608</span>
+		</footer>
+	</main>
+</body>
+</html>
