@@ -37,7 +37,9 @@
 			margin: 0.5em;
 			display: flex;
 			flex-flow: row;
-			position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+			position: absolute; 
+			left: 0; top: 0; right: 0; 
+			/*bottom: 0;*/
 			font-family: Patua One, sans-serif;
 		}
 
@@ -64,7 +66,7 @@
 
 		main {
 			background-color: var(--colBG2);
-			padding-top: 2em;
+			padding: 2em;
 			padding-bottom: 0;
 		}
 
@@ -116,9 +118,6 @@
 			color: var(--colPrimary);
 		}
 
-		h2, h3 {
-			color
-		}
 		.num {
 			font-family: Bebas Neue;
 			font-size: 1.25em;
@@ -135,7 +134,7 @@
 
 		.socials {
 			font-size: 2em;
-			margin: 0;
+			margin: 0.5em 0;
 		}
 
 		.socials i {
@@ -147,11 +146,55 @@
 			text-overflow: clip;
 		}
 
+		::placeholder {
+			color: var(--colBG3);
+		}
 		footer {
 			line-height: 2em;
 		}
 
-		@media (max-width:600px) {
+		/* FORM */
+		form {
+			display: flex;
+			flex-flow: column;
+			align-items: stretch;
+			border: 2px solid var(--colSecondary);
+			padding: 1em;
+			max-width: 600px;
+		}
+
+		h3 {
+			margin: 16px 8px;
+			line-height: 0;
+			padding: 0;
+		}
+		form label {
+			margin: 8px;
+			display: flex;
+		}
+
+		label span {
+			flex-basis: 80px;
+		}
+
+		input, textarea {
+			background-color: var(--colFG);
+			color: var(--colBG1);
+			border: 0;
+			flex-grow: 1;
+			padding: 8px;
+		}
+
+		button {
+			background-color: var(--colPrimary);
+			color: var(--colFG);
+			padding: 1em;
+			margin: 8px;
+			border: 0;
+			border-radius: 8px;
+		}
+
+		@media (max-width:800px) {
 			body {
 				flex-flow: column;
 				margin: 0;
@@ -165,21 +208,34 @@
 				height: 66%;
 				aspect-ratio: 1 / 1;
 			}
+
 			header {
 				flex: 0 0 25%;
 			}
+
 			main {
 				flex: 1 0 75%;
 				justify-content: flex-start;
 				align-items: flex-start;
-				padding-top: 0;
+				padding: 1em;
 				padding-bottom: 2em;
 			}
+
 			nav {
 				top: auto;
 				bottom: 0;
 			}
+
+			form label {
+				flex-flow: column;
+			}
+
+			label span {
+				flex-basis: auto;
+				display: none;
+			}
 		}
+
 	</style>
 </head>
 <body>
@@ -201,8 +257,31 @@
 		</ul>
 		<p>Send a message to inquire about any services you need from us.</p>
 		<hr>
-		<p class='contact'><i class="fa-solid fa-phone"></i> Michael <span class='fade'>|</span> <a href="tel:0401421723" class='num'>0405 625 925</a><br>
-		<i class="fa-solid fa-envelope"></i> <a href="mailto:heygleeson@gmail.com" class='email'>michael@adventureboundautoaelectrical.au</a></p>
+		<p class='contact'><i class="fa-solid fa-phone"></i> Michael <span class='fade'>|</span> <a href="tel:0405625925" class='num'>0405 625 925</a><br>
+		<i class="fa-solid fa-envelope"></i> <a href="mailto:michael@adventureboundauto.au" class='email'>michael@adventureboundauto.au</a></p>
+
+		<form
+		  action="https://formspree.io/f/xjvdvpnz"
+		  method="POST"
+		>
+		<h3>Contact Form</h3>
+		  <label>
+		    <span>Name</span>
+		    <input name="name" placeholder="Name">
+		  </label>
+		  <label>
+		    <span>Email</span>
+		    <input type="email" name="email" placeholder="Email">
+		  </label>
+		  <label>
+		    <span>Message</span>
+		    <textarea name="message" placeholder="Your Message" rows="4"></textarea>
+		  </label>
+		  <!-- your other form fields go here -->
+		  <button type="submit">Send</button>
+		</form>
+
+
 		<p class='socials'><a href="https://www.instagram.com/adventureboundautoelectrical/" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a href="https://www.facebook.com/adventureboundautoelectrical/" target="_blank"><i class="fa-brands fa-facebook"></i></a></p>
 		<hr>
 		<footer>
