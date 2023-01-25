@@ -10,9 +10,12 @@
 
 	<link rel="icon" type="image/png" href="favicon.png">
 
+
+	<meta name="keywords" content="auto electrician, hawkesbury, 4wd, camping,">
+
 	<meta property="og:title" content="Adventure Bound | Auto Electrical"/>
-	<meta name="description" content="Be ready for your next adventure.">
-	<meta property="og:description" content="Be ready for your next adventure."/>
+	<meta name="description" content="Be ready for your next adventure. Mobile auto electrician based in the Hawkesbury offering a range of automotive electrical services.">
+	<meta property="og:description" content="Be ready for your next adventure. Mobile auto electrician based in the Hawkesbury offering a range of automotive electrical services."/>
 	<meta property="og:image" content="/img/social-card.png"/>
 	<meta property="og:url" content="https://adventureboundauto.au"/>
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -192,6 +195,7 @@
 			background-color: var(--colBG3);
 			border: 2px solid var(--colBG2);
 			border-radius: 8px;
+			margin: 2em;
 			padding: 1em;
 			max-width: 600px;
 		}
@@ -206,6 +210,7 @@
 		form label {
 			margin: 8px;
 			display: flex;
+			flex-flow: row-reverse;
 		}
 
 		label span {
@@ -216,6 +221,7 @@
 			justify-content: center;
 			background-color: var(--colBG1);
 			border-radius: 8px 0 0 8px;
+			transition: background-color 150ms ease-in-out;
 		}
 
 		input, textarea {
@@ -229,6 +235,10 @@
 			font-size: 1.2rem;
 		}
 
+		input:focus + span, textarea:focus + span {
+			background-color: var(--colSecondary);
+		}
+
 		button {
 			background-color: var(--colPrimary);
 			color: var(--colFG);
@@ -240,7 +250,7 @@
 			font-size: 1.2rem;
 		}
 
-		button:hover {
+		button:hover, button:focus {
 			background-color: var(--colSecondary);
 			color: var(--colBG1);
 			cursor: pointer;
@@ -327,27 +337,51 @@
 		<i class="fa-solid fa-envelope"></i> <a href="mailto:michael@adventureboundauto.au" class='email'>michael@adventureboundauto.au</a></p>
 		<p class='socials'><a href="https://www.instagram.com/adventurebound.autoelectrical/" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a href="https://www.facebook.com/adventureboundautoelectrical/" target="_blank"><i class="fa-brands fa-facebook"></i></a></p>
 		<hr>
-		<form
-		  action="https://formspree.io/f/xjvdvpnz"
-		  method="POST"
+
+		<form 
+			action="https://formsubmit.co/michael@adventureboundauto.au" 
+			method="POST" 
+			target="_blank"
+			enctype="multipart/form-data"
 		>
-		<h3>Contact Form</h3>
-		  <label>
-		    <span><i class="fa-solid fa-user"></i></span>
-		    <input name="name" placeholder="Name">
-		  </label>
-		  <label>
-		    <span><i class="fa-solid fa-at"></i></span>
-		    <input type="email" name="email" placeholder="Email">
-		  </label>
-		  <label>
-		    <span><i class="fa-solid fa-message"></i></span>
-		    <textarea name="message" placeholder="Your Message" rows="4"></textarea>
-		  </label>
-		  <!-- your other form fields go here -->
-		  <button type="submit">Send</button>
+			<h3>Contact Form</h3>
+
+			<label>
+				<input name="name" placeholder="Name" required>
+				<span><i class="fa-solid fa-user"></i></span>
+			</label>
+
+			<label>
+				<input type="email" name="email" placeholder="Email" required>
+				<span><i class="fa-solid fa-at"></i></span>
+			</label>
+
+			<label>
+				<input type="subject" name="_subject" placeholder="Subject" required>
+				<span><i class="fa-solid fa-quote-right"></i></span>
+			</label>
+
+			<label>
+				<textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+				<span><i class="fa-solid fa-message"></i></span>
+			</label>
+
+			<label>
+				<div>
+					Optional: Upload a file (less than 5MB)
+					<input type="file" name="attachment" accept="image/png, image/jpeg" placeholder="upload image">
+				</div>
+				<span><i class="fa-solid fa-message"></i></span>
+			</label>
+
+			<!-- your other form fields go here -->
+			<input type="hidden" name="_template" value="table">
+			
+			<button type="submit">Send</button>
 		</form>
+
 		<hr>
+
 		<footer>
 			Adventure Bound Auto Electrical<br>
 			<i class="fa-solid fa-location-dot"></i> Hawkesbury NSW <br>
