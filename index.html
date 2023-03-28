@@ -35,6 +35,11 @@
 			--colSecondary: #f99b1c;
 		}
 
+		html {
+			margin: 0;
+			overscroll-behavior: none auto;
+		}
+
 		* {
 			box-sizing: border-box;
 			color: var(--colFG);
@@ -47,6 +52,7 @@
 			flex-flow: row;
 			min-height: 100vh;
 			font-family: Patua One, sans-serif;
+
 		}
 
 		body > * {
@@ -73,6 +79,9 @@
 
 		ul {
 			line-height: 2em;
+			font-size: 1.4em;
+			padding-left: 20px;
+			list-style-type: none;
 		}
 
 		main {
@@ -201,14 +210,14 @@
 		}
 
 		h3 {
-			margin: 24px 8px;
+			margin: 24px 0px;
 			line-height: 0;
 			padding: 0;
 			font-size: 1.6em;
 		}
 
 		form label {
-			margin: 8px;
+			margin: 6px;
 			display: flex;
 			flex-flow: row-reverse;
 		}
@@ -241,11 +250,11 @@
 
 		button {
 			background-color: var(--colPrimary);
-			color: var(--colFG);
+			color: white;
 			padding: 1em;
 			margin: 8px;
 			border: 0;
-			border-radius: 8px;
+			border-radius: 4px;
 			font-family: Patua One, sans-serif;
 			font-size: 1.2rem;
 		}
@@ -259,6 +268,31 @@
 		button:active {
 			background-color: var(--colFG);
 			color: var(--colBG1);
+		}
+
+		input[type=file] {
+			cursor: pointer;
+			width: 100%;
+		}
+
+		#fileUpload {
+			background: var(--colBG);
+			color: var(--colFG);
+			padding: 8px 0px;
+		}
+
+		input[type=file]::file-selector-button {
+			background-color: var(--colPrimary);
+			color: var(--colFG);
+			border: none;
+			border-radius: 4px;
+			padding: 8px;
+		}
+
+		input[type=file]::file-selector-button:hover {
+			background-color: var(--colSecondary);
+			color: var(--colBG);
+			cursor: pointer;
 		}
 
 		@media (max-width:800px) {
@@ -275,8 +309,8 @@
 				align-items: center;
 			}
 			#logo img {
-				width: 66%;
-				height: 66%;
+				width: 90%;
+				height: 90%;
 				aspect-ratio: 1 / 1;
 			}
 
@@ -299,6 +333,9 @@
 
 			form label {
 				flex-flow: column;
+			}
+			form {
+				margin: 0;
 			}
 
 			label span {
@@ -324,18 +361,25 @@
 		<h1>Be ready for your next adventure.</h1>
 		<p>Mobile auto electrician based in the Hawkesbury offering a range of automotive electrical services. Our services include:</p>
 		<ul>
-			<li>Dual Battery Systems</li>
-			<li>Off-Grid Setups</li>
-			<li>Accessory installation</li>
-			<li>Electrical system repairs/upgrades</li>
+			<li><i class="fa-solid fa-car-battery"></i> Dual Battery Systems</li>
+			<li><i class="fa-solid fa-solar-panel"></i>Off-Grid Setups</li>
+			<li><i class="fa-solid fa-lightbulb"></i> Accessory Installs</li>
+			<li><i class="fa-solid fa-wrench"></i> System repairs/upgrades</li>
 		</ul>
 		<p>Send a message to inquire about any services you need from us.</p>
 		<hr>
 
 		<h2>Get in touch</h2>
-		<p class='contact'><i class="fa-solid fa-phone"></i> Michael <span class='fade'>|</span> <a href="tel:0405625925" class='num'>0405 625 925</a><br>
+		<p class='contact'><i class="fa-solid fa-phone"></i> <a href="tel:0405625925" class='num'>0405 625 925</a><br>
 		<i class="fa-solid fa-envelope"></i> <a href="mailto:michael@adventureboundauto.au" class='email'>michael@adventureboundauto.au</a></p>
 		<p class='socials'><a href="https://www.instagram.com/adventurebound.autoelectrical/" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a href="https://www.facebook.com/adventureboundautoelectrical/" target="_blank"><i class="fa-brands fa-facebook"></i></a></p>
+
+		<div>
+			<button><i class="fa-solid fa-phone"></i> Call Now</button>
+			<button><i class="fa-brands fa-facebook"></i>  Message</button>
+			<button><i class="fa-brands fa-instagram"></i> Message</button>
+		</div>
+
 		<hr>
 
 		<form 
@@ -344,7 +388,7 @@
 			target="_blank"
 			enctype="multipart/form-data"
 		>
-			<h3>Contact Form</h3>
+			<h3><i class="fa-solid fa-envelope"></i> Contact Form</h3>
 
 			<label>
 				<input name="name" placeholder="Name" required>
@@ -368,10 +412,10 @@
 
 			<label>
 				<div>
-					Optional: Upload a file (less than 5MB)
-					<input type="file" name="attachment" accept="image/png, image/jpeg" placeholder="upload image">
+					<div class="fade">Optional: Upload a file ( < 5MB )</div>
+					<input id="fileUpload" type="file" name="attachment" accept="image/png, image/jpeg" placeholder="upload">
 				</div>
-				<span><i class="fa-solid fa-message"></i></span>
+				<span><i class="fa-solid fa-paperclip"></i></span>
 			</label>
 
 			<!-- your other form fields go here -->
@@ -386,7 +430,7 @@
 			Adventure Bound Auto Electrical<br>
 			<i class="fa-solid fa-location-dot"></i> Hawkesbury NSW <br>
 			<span class='num'> ABN 57 679 695 608</span> <br>
-			<span class='copy'>&copy; 2023 Adventure Bound Auto Electrical</span>
+			<span class='fade'>&copy; 2023 Adventure Bound Auto Electrical</span>
 		</footer>
 	</main>
 </body>
