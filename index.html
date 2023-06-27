@@ -233,7 +233,7 @@
 			transition: background-color 150ms ease-in-out;
 		}
 
-		input, textarea {
+		input, textarea, .formarea {
 			background-color: var(--colFG);
 			color: var(--colBG1);
 			border: 0;
@@ -242,6 +242,10 @@
 			border-radius: 0 8px 8px 0;
 			font-family: Patua One, sans-serif;
 			font-size: 1.2rem;
+		}
+
+		.formarea {
+			background-color: var(--colBG1);
 		}
 
 		input:focus + span, textarea:focus + span {
@@ -294,6 +298,8 @@
 			color: var(--colBG);
 			cursor: pointer;
 		}
+
+		script {display: none;}
 
 		@media (max-width:800px) {
 			body {
@@ -374,12 +380,6 @@
 		<i class="fa-solid fa-envelope"></i> <a href="mailto:michael@adventureboundauto.au" class='email'>michael@adventureboundauto.au</a></p>
 		<p class='socials'><a href="https://www.instagram.com/adventurebound.autoelectrical/" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a href="https://www.facebook.com/adventureboundautoelectrical/" target="_blank"><i class="fa-brands fa-facebook"></i></a></p>
 
-		<div>
-			<button><i class="fa-solid fa-phone"></i> Call Now</button>
-			<button><i class="fa-brands fa-facebook"></i>  Message</button>
-			<button><i class="fa-brands fa-instagram"></i> Message</button>
-		</div>
-
 		<hr>
 
 		<form 
@@ -411,7 +411,7 @@
 			</label>
 
 			<label>
-				<div>
+				<div class="formarea">
 					<div class="fade">Optional: Upload a file ( < 5MB )</div>
 					<input id="fileUpload" type="file" name="attachment" accept="image/png, image/jpeg" placeholder="upload">
 				</div>
