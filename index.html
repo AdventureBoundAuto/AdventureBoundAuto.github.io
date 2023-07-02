@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-	<!--'adventureboundauto.au' site created by Andrew Gleeson (gleeson.dev) -->
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Adventure Bound | Auto Electrical</title>
 
-	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="icon" type="image/png" href="/favicon.png">
 
 
 	<meta name="keywords" content="auto electrician, hawkesbury, 4wd, camping,">
@@ -21,417 +18,43 @@
 	<meta name="twitter:card" content="summary_large_image"/>
 
 	<script src="https://kit.fontawesome.com/87224a5bfc.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="style.css">
 
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Patua+One&display=swap');
-
-		:root {
-			/* Dark Mode */
-			--colBG1: #28302d;
-			--colBG2: #181d19;
-			--colBG3: #28302daa;
-			--colFG: #faf1b1;
-			--colPrimary: #A8C254;
-			--colSecondary: #f99b1c;
-		}
-
-		html {
-			margin: 0;
-			overscroll-behavior: none auto;
-		}
-
-		* {
-			box-sizing: border-box;
-			color: var(--colFG);
-		}
-
-		body {
-			background-color: var(--colFG);
-			margin: 0;
-			display: flex;
-			flex-flow: row;
-			min-height: 100vh;
-			font-family: Patua One, sans-serif;
-
-		}
-
-		body > * {
-			display: flex;
-			flex-flow: column;
-			justify-content: center;
-			align-items: center;
-			flex-basis: 50%;
-			padding: 1em;
-			position: relative;
-		}
-
-		header {
-			background-color: var(--colBG3);
-			background-image: url('../img/desert-4wd.jpg');
-			background-size: cover;
-			background-position: bottom center;
-			background-attachment: fixed;
-			background-blend-mode: multiply;
-			max-height: 100vh;
-			position: sticky;
-			top: 0;
-		}
-
-		ul {
-			line-height: 2em;
-			font-size: 1.4em;
-			padding-left: 20px;
-			list-style-type: none;
-		}
-
-		main {
-			background-color: var(--colBG2);
-			padding: 2em;
-			padding-bottom: 0;
-		}
-
-		main > * {
-			width: 100%;
-		}
-
-		nav {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			padding: .5em;
-			display: flex;
-			height: 2em;
-			justify-content: space-around;
-			background-color: var(--colBG3);
-		}
-
-		#logo {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			aspect-ratio: 1 / 1;
-			text-align: center;
-			border-radius: 50%;
-			max-height: 100vh;
-			position: fixed;
-		}
-
-		#logo span {
-			font-size: 2em;
-			color: var(--colBG2);
-		}
-
-		#logo img {
-			width: 50%;
-			height: 50%;
-		}
-
-		a {color: var(--colSecondary);}
-
-		i {padding-right: 0.5em;}
-		form i {padding: 0 0.5em;}
-
-		hr {
-			border: 0;
-			border-top: 2px solid var(--colBG3);
-		}
-
-		h1, h2, h3 {
-			color: var(--colPrimary);
-			font-weight: 100;
-		}
-
-		h1 {
-			font-size: 3em;
-			color: var(--colSecondary);
-    		font-style: italic;
-		}
-
-		h2 {
-			font-size: 2.5em;
-			margin: .5em 0 0 0;
-		}
-
-		.num {
-			font-family: Bebas Neue;
-			font-size: 1.25em;
-			vertical-align: middle;
-		}
-
-		.fade {
-			opacity: 0.5;
-		}
-
-		.contact {
-			line-height: 2.5em;
-		}
-
-		.socials {
-			font-size: 2.5em;
-			margin: 0.25em 0;
-		}
-
-		.socials i:hover {
-			color: var(--colSecondary);
-		}
-
-		.email {
-			overflow: hidden;
-			text-overflow: clip;
-		}
-
-		.copy {
-			display: block;
-			margin: 1em 0;
-			color: var(--colBG1);
-		}
-
-		::placeholder {
-			color: var(--colBG3);
-		}
-
-		footer {
-			line-height: 2em;
-			margin-bottom: 5em;
-		}
-
-		/* FORM */
-		form {
-			display: flex;
-			flex-flow: column;
-			align-items: stretch;
-			background-color: var(--colBG3);
-			border: 2px solid var(--colBG2);
-			border-radius: 8px;
-			margin: 2em;
-			padding: 1em;
-			max-width: 600px;
-		}
-
-		h3 {
-			margin: 24px 0px;
-			line-height: 0;
-			padding: 0;
-			font-size: 1.6em;
-		}
-
-		form label {
-			margin: 6px;
-			display: flex;
-			flex-flow: row-reverse;
-		}
-
-		label span {
-			flex-basis: 50px;
-			display: flex;
-			flex-shrink: 0;
-			align-items: center;
-			justify-content: center;
-			background-color: var(--colBG1);
-			border-radius: 8px 0 0 8px;
-			transition: background-color 150ms ease-in-out;
-		}
-
-		input, textarea, .formarea {
-			background-color: var(--colFG);
-			color: var(--colBG1);
-			border: 0;
-			flex-grow: 1;
-			padding: 8px;
-			border-radius: 0 8px 8px 0;
-			font-family: Patua One, sans-serif;
-			font-size: 1.2rem;
-		}
-
-		.formarea {
-			background-color: var(--colBG1);
-		}
-
-		input:focus + span, textarea:focus + span {
-			background-color: var(--colSecondary);
-		}
-
-		button {
-			background-color: var(--colPrimary);
-			color: white;
-			padding: 1em;
-			margin: 8px;
-			border: 0;
-			border-radius: 4px;
-			font-family: Patua One, sans-serif;
-			font-size: 1.2rem;
-		}
-
-		button:hover, button:focus {
-			background-color: var(--colSecondary);
-			color: var(--colBG1);
-			cursor: pointer;
-		}
-
-		button:active {
-			background-color: var(--colFG);
-			color: var(--colBG1);
-		}
-
-		input[type=file] {
-			cursor: pointer;
-			width: 100%;
-		}
-
-		#fileUpload {
-			background: var(--colBG);
-			color: var(--colFG);
-			padding: 8px 0px;
-		}
-
-		input[type=file]::file-selector-button {
-			background-color: var(--colPrimary);
-			color: var(--colFG);
-			border: none;
-			border-radius: 4px;
-			padding: 8px;
-		}
-
-		input[type=file]::file-selector-button:hover {
-			background-color: var(--colSecondary);
-			color: var(--colBG);
-			cursor: pointer;
-		}
-
-		script {display: none;}
-
-		@media (max-width:800px) {
-			body {
-				flex-flow: column;
-				margin: 0;
-			}
-			body > * {
-				padding: 1.5em;
-			}
-
-			#logo {
-				position: relative;
-				align-items: center;
-			}
-			#logo img {
-				width: 90%;
-				height: 90%;
-				aspect-ratio: 1 / 1;
-			}
-
-			header {
-				flex: 0 0 25%;
-			}
-
-			main {
-				flex: 1 0 75%;
-				justify-content: flex-start;
-				align-items: flex-start;
-				padding: 1em;
-				padding-bottom: 2em;
-			}
-
-			nav {
-				top: auto;
-				bottom: 0;
-			}
-
-			form label {
-				flex-flow: column;
-			}
-			form {
-				margin: 0;
-			}
-
-			label span {
-				flex-basis: auto;
-				display: none;
-			}
-
-			input, textarea {
-				border-radius: 4px;
-			}
-		}
-
-	</style>
+	<!--'adventureboundauto.au' site created by Andrew Gleeson (gleeson.dev) -->
 </head>
 <body>
-
-	<header>
-		<div id=logo>
-			<img src="img/logo-colour.png">
-		</div>
-	</header>
-	<main>
-		<h1>Be ready for your next adventure.</h1>
-		<p>Mobile auto electrician based in the Hawkesbury offering a range of automotive electrical services. Our services include:</p>
-		<ul>
-			<li><i class="fa-solid fa-car-battery"></i> Dual Battery Systems</li>
-			<li><i class="fa-solid fa-solar-panel"></i>Off-Grid Setups</li>
-			<li><i class="fa-solid fa-lightbulb"></i> Accessory Installs</li>
-			<li><i class="fa-solid fa-wrench"></i> System repairs/upgrades</li>
-		</ul>
-		<p>Send a message to inquire about any services you need from us.</p>
-		<hr>
-
-		<h2>Get in touch</h2>
-		<p class='contact'><i class="fa-solid fa-phone"></i> <a href="tel:0405625925" class='num'>0405 625 925</a><br>
-		<i class="fa-solid fa-envelope"></i> <a href="mailto:michael@adventureboundauto.au" class='email'>michael@adventureboundauto.au</a></p>
-		<p class='socials'><a href="https://www.instagram.com/adventurebound.autoelectrical/" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a href="https://www.facebook.com/adventureboundautoelectrical/" target="_blank"><i class="fa-brands fa-facebook"></i></a></p>
-
-		<hr>
-
-		<form 
-			action="https://formsubmit.co/michael@adventureboundauto.au" 
-			method="POST" 
-			target="_blank"
-			enctype="multipart/form-data"
-		>
-			<h3><i class="fa-solid fa-envelope"></i> Contact Form</h3>
-
-			<label>
-				<input name="name" placeholder="Name" required>
-				<span><i class="fa-solid fa-user"></i></span>
-			</label>
-
-			<label>
-				<input type="email" name="email" placeholder="Email" required>
-				<span><i class="fa-solid fa-at"></i></span>
-			</label>
-
-			<label>
-				<input type="subject" name="_subject" placeholder="Subject" required>
-				<span><i class="fa-solid fa-quote-right"></i></span>
-			</label>
-
-			<label>
-				<textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-				<span><i class="fa-solid fa-message"></i></span>
-			</label>
-
-			<label>
-				<div class="formarea">
-					<div class="fade">Optional: Upload a file ( < 5MB )</div>
-					<input id="fileUpload" type="file" name="attachment" accept="image/png, image/jpeg" placeholder="upload">
+	<div id="bgImage"></div>
+	<div id="wrapper">
+		<main>
+			<div class="inner">
+				<div class="image full">
+					<span class="frame">
+						<div id="image1"></div>
+						<!-- <img id="image1"src="/img/desert-4wd.jpg"/> -->
+						<img id="logo" src="/img/logo-colour.png"/>
+					</span>
 				</div>
-				<span><i class="fa-solid fa-paperclip"></i></span>
-			</label>
-
-			<!-- your other form fields go here -->
-			<input type="hidden" name="_template" value="table">
-			
-			<button type="submit">Send</button>
-		</form>
-
-		<hr>
-
+				<div id="text1">Michael Gleeson</div>
+				<p id="text2">Hawkesbury Mobile Auto Electrician</p>
+				<hr class="divider">
+				<ul id="services">
+					<li><i class="fa-solid fa-solar-panel fa-fw"></i> Off-Grid Setups</li>
+					<li><i class="fa-solid fa-car-battery fa-fw"></i> Dual Battery Systems</li>
+					<li><i class="fa-solid fa-lightbulb fa-fw"></i> Accessories</li>
+					<li><i class="fa-solid fa-wrench fa-fw"></i> Repairs & Upgrades</li>
+				</ul>
+				<hr class="divider">
+				<ul id="icons">
+					<li><a href="tel:0405625925" class="pill"><i class="fa-solid fa-phone fa-fw"></i> Call</a></li>
+					<li><a href="mailto:michael@adventureboundauto.au" class="icon"><i class="fa-solid fa-envelope fa-fw"></i></a></li>
+					<li><a href="https://www.instagram.com/adventurebound.autoelectrical/" class="icon" target="_blank"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
+					<li><a href="https://www.facebook.com/adventureboundautoelectrical/" target="_blank" class="icon"><i class="fa-brands fa-facebook fa-fw"></i></a></li>
+				</ul>
+			</div>
+		</main>
 		<footer>
-			Adventure Bound Auto Electrical<br>
-			<i class="fa-solid fa-location-dot"></i> Hawkesbury NSW <br>
-			<span class='num'> ABN 57 679 695 608</span> <br>
-			<span class='fade'>&copy; 2023 Adventure Bound Auto Electrical</span>
+			<span>ABN 57 679 695 6083</span>
 		</footer>
-	</main>
+	</div>
 </body>
 </html>
